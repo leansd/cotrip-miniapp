@@ -1,0 +1,18 @@
+.number-selector {
+  display: flex;
+  align-items: center;
+}
+
+.minus,
+.plus {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+}
+
+.number {
+  margin: 0 8px;
+}

@@ -1,6 +1,16 @@
-// pages/show-map/show-map.js
-Page({
-	data: {
+// components/plan.ts
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
     numberValue: 1,
     timeRanges: [
       { value: "09:00-10:00", display: "上午 09:00 - 10:00" },
@@ -11,11 +21,13 @@ Page({
     selectedTimeRange: { value: "09:00-10:00", display: "上午 09:00 - 10:00" }
   },
   
-  handleNumberChange(event:any){
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    handleNumberChange(event:any){
       this.setData({numberValue:event.detail.value})
-  },
+  }
 
-	onLoad: function () {
-  
-	},
-});
+  }
+})

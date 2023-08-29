@@ -1,5 +1,6 @@
 <view class="show-map-container">
   <map class="map" latitude="40.040415"  longitude="116.273511"  enable-poi enable-rotate></map>
   <view class="panel-frame">
+    <plan class="plan"></plan>
   </view>
 </view>

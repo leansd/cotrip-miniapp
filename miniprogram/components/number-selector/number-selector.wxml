@@ -1,0 +1,5 @@
+<view class="number-selector">
+  <view class="minus" bindtap="handleMinus">-</view>
+  <view class="number">{{value}}</view>
+  <view class="plus" bindtap="handlePlus">+</view>
+</view>

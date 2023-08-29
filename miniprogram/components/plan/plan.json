@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "number-selector": "../../components/number-selector/number-selector"
+  }
+}

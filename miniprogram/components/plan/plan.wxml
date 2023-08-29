@@ -1,0 +1,20 @@
+<view class="plan">
+  <view class="row">
+    <image class="clock" src="../../img/clock.png"></image>
+    <picker class="time-picker" mode="selector" range="{{timeRanges}}" range-key="display" bindchange="handleTimeChange">
+      <view>{{selectedTimeRange.display}}</view>
+    </picker>
+    <number-selector value="{{numberValue}}" max="3" min="1" bind:change="handleNumberChange"></number-selector>
+  </view>
+  <view class="row">
+      <view class="dotview"><view class="dot"/></view>
+      <view class="address-display">出发地</view>
+  </view>
+  <view class="row">
+      <view class="dotview"><view class="dot"/></view>
+      <view class="address-display">目的地</view>
+  </view> 
+  <view class="row-button">
+    <button class="ok-button">确定</button>
+  </view>
+</view>

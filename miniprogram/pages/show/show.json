@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "plan":"../../components/plan/plan"
   },
   "navigationBarTitleText": "共享出行演示"
 }
