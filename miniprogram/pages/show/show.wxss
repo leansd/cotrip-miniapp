@@ -3,34 +3,50 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: 100%;
-  background: #F8F8F7;
+  height: 100vh;
+  width: 100vw;
+  background: #bababa;
 }
-.map-container {
-  padding:20px 0 0;
-  margin-top: 10px;
-  background: #FFF;
+
+.map {
+  display: flex;
   width: 100%;
-  position: relative;
+  height: 100%;
+}
+
+.panel-frame {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 180px;
+  margin: 8px;
+  width: calc(100vw - 24px);
+  border-radius: 4px;
+  background-color: white;
+  padding: 4px;
+  z-index: 10;
+}
+
+.panel{
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background-color: white;
 }
 .map-content {
   background: #FFF;
-  position: absolute;
   z-index: 1;
   width: 100%;
   opacity: 0;
-  box-sizing: border-box;
 }
+
 .map-content-show {
   height: auto;
   z-index: 2;
   opacity: 1;
   transition: 0.3s;
 }
+
 .map-padding {
   padding-bottom: 20px;
-}
-.map {
-  width:100%;
-  height:400px;
 }
