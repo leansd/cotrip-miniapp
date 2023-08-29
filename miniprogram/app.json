@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/show/show",
+    "pages/mine/mine"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "renderer": "skyline",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "plugins": {
+    
+  },  
+  "permission": {
+    "scope.userLocation": {
+    "desc": "出行服务需要你的位置信息"
+    }
+  },
+  "tabBar": {
+    "color": "#878787",
+    "selectedColor": "#505050",
+    "backgroundColor": "#ff ffff",
+    "borderStyle": "black",
+    "list": [
+            {
+                    "pagePath": "pages/show/show",
+                    "text": "出行",
+                    "iconPath": "img/car_white.png",
+                    "selectedIconPath": "img/car_filled.png"
+            },
+            {
+                    "pagePath": "pages/mine/mine",
+                    "text": "我的",
+                    "iconPath": "img/person_white.png",
+                    "selectedIconPath": "img/person_filled.png"
+            }
+    ]
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
