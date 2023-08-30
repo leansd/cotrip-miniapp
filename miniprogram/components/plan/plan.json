@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "number-selector": "../../components/number-selector/number-selector"
+    "number-selector": "../../components/number-selector/number-selector",
+    "address-selector": "../../components/address-selector/address-selector"
   }
 }

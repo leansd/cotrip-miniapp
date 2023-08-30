@@ -1,25 +1,19 @@
-.plan{
+.plan {
   display: flex;
   width: 100%;
-  height: 100%;
   flex-direction: column;
   font-size: 20px;
 }
 
-.row, .row-button{
+.info-row,
+.button-row {
   display: flex;
-  width: 100%;
-  padding: 12px 24px 0 12px;
-  border-bottom: gray;
-  align-items:flex-start;
-  justify-content:center;
+  padding: 12px;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-.row-button{
-  align-items: flex-end;
-}
-
-.ok-button{
+.ok-button {
   background-color: red;
   width: 120px;
   color: white;
@@ -27,44 +21,48 @@
 }
 
 .dotview {
-  display: inline;
+  display: flex;
   height: 40px;
   width: 40px;
-  padding: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
-.dot{
-  height: 100%;
-  width: 100%;
+.green-dot {
+  background-color: green
+}
+
+.red-dot {
+  background-color: red
+}
+
+.green-dot, .red-dot {
+  height: 10px;
+  width: 10px;
   border-radius: 5px;
-  background-color: red;
+  
 }
 
-.address-display{
+.address-display {
   flex-grow: 1;
-  padding: 0 24px 8px 24px;
-  border-bottom: solid 1px #9a9a9a;
-}
-
-.green-dot{
-  color: green
-}
-
-.red-dot{
-  color: red
+  padding-left: 24px;
+  color: #3a3a3a;
+  border-bottom: solid 1px #8a8a8a;
 }
 
 
-.clock{
+
+.clock {
   height: 28px;
   width: 28px;
   margin-left: 8px;
 }
 
-.time-picker{
+.time-picker {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
-  color: #3a3a3a;
+  padding-left: 25px;
   flex-grow: 1;
+  color: #3a3a3a;
 }
+
