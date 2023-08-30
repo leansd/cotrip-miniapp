@@ -17,4 +17,5 @@
   <view class="button-row">
     <button class="ok-button">确定</button>
   </view>
+  <address-selector wx:if="{{showAddressSelector}}"/>
 </view>

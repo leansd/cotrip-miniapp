@@ -11,7 +11,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    showAddressSelector: false,
+    showAddressSelector: true,
     currentAddress: 0, //0 - departure 1 - arrival
     numberValue: 1,
     departure:{"name": "虹桥火车站南出站",

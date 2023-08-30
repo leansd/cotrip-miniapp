@@ -1,9 +1,90 @@
 .address-modal{
   position: fixed;
+  display: flex;
+  flex-direction: column;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 220;
-  background-color: blue;
+  z-index: 100;
+  background-color:#aaaaaa;
+  font-size: 20px;
+}
+
+.upper-container, .lower-container {
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.upper-container {
+  display: flex;
+  height: 60px;
+  margin-top: 90px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.address-bar {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 12px 24px 12px 24px;
+  border-radius: 40px;
+  background-color: #efefef;
+  margin-right: 20px;
+}
+
+.city-picker {
+  padding: 8px 12px 8px 8px;
+  width: 100px;
+  height: 24px;
+  border-right: solid 2px gray;
+}
+
+.address-input {
+  flex-grow: 1;
+  margin-left: 8px;
+  padding: 8px;
+  height: 24px;
+  font-size: 20px;
+}
+
+.cancel-button {
+  align-self: center;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 16px;
+  color: #5f5f5f
+}
+
+.lower-container {
+  margin-top: 16px;
+}
+
+.address-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  margin-right: 24px;
+}
+
+.address-details {
+  flex: 1;
+}
+
+.poi-name {
+  font-weight: bold;
+}
+
+.poi-address {
+  color: #777;
 }
