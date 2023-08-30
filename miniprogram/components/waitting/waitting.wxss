@@ -1,0 +1,23 @@
+.waitting{
+  display: flex;
+}
+.prompt{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.prompt-title{
+  font-size: 36px;
+}
+
+.prompt-subtitle{
+  color: #8f8f8f;
+  padding-left:2px;
+}
+
+.cancel-button{
+  color: #3f3f3f;
+  margin: 24px 24px 24px 0;
+  width: 100px!important;
+}

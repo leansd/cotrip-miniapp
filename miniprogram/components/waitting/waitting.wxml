@@ -1,0 +1,7 @@
+<view class="waitting">
+  <view class="prompt">
+    <view class="prompt-title">请稍等...</view>
+    <view class="prompt-subtitle">正在等待其他拼友</view>
+  </view>
+  <button class="cancel-button">取消</button>
+</view>

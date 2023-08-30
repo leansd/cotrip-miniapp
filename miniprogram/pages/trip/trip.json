@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "plan":"../../components/plan/plan"
+    "plan":"../../components/plan/plan",
+    "waitting":"../../components/waitting/waitting"
   },
   "navigationBarTitleText": "共享出行演示"
 }
