@@ -1,0 +1,19 @@
+<view class="cancelled">
+  <view class="prompt-title">订单取消成功</view>
+  <view class="time-row">
+    <image class="icon" src="../../img/clock.png"></image>
+    <view class="time-info">{{departureTime}}</view>
+  </view>
+  <view class="info-row">
+      <view class="dotview"><view class="green-dot"/></view>
+      <view class="address-display">{{departure.name}}</view>
+  </view>
+  <view class="info-row">
+      <view class="dotview"><view class="red-dot"/></view>
+      <view class="address-display" bind:tap="showAddress(1)">{{arrival.name}}</view>
+  </view> 
+  <view class="button-row">
+    <button class="ok-button">重新下单</button>
+  </view>
+  <address-selector wx:if="{{showAddressSelector}}"/>
+</view>

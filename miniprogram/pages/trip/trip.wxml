@@ -1,8 +1,9 @@
 <view class="show-map-container">
   <map class="map" latitude="40.040415"  longitude="116.273511"  enable-poi enable-rotate></map>
   <view class="panel-frame">
-    <plan class="panel" wx:if="{{status==='plan'}}"></plan>
-    <waitting class="panel" wx:if="{{status==='waitting'}}"></waitting>
-    <to-meet class="panel" wx:if="{{status==='to-meet'}}"></to-meet>
+    <plan class="panel" wx:if="{{status==='plan'}}"/>
+    <waitting class="panel" wx:if="{{status==='waitting'}}"/>
+    <to-meet class="panel" wx:if="{{status==='to-meet'}}"/>
+    <cancel-notice class="panel" wx:if="{{status==='cancelled'}}"/>
   </view>
 </view>

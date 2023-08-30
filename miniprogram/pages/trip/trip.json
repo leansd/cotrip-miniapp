@@ -2,7 +2,8 @@
   "usingComponents": {
     "plan":"../../components/plan/plan",
     "waitting":"../../components/waitting/waitting",
-    "to-meet":"../../components/to-meet/to-meet"
+    "to-meet":"../../components/to-meet/to-meet",
+    "cancel-notice": "../../components/cancel/cancel-notice"
   },
   "navigationBarTitleText": "共享出行演示"
 }
