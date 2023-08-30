@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/show/show",
+    "pages/trip/trip",
     "pages/mine/mine"
   ],
   "window": {
@@ -34,7 +34,7 @@
     "borderStyle": "black",
     "list": [
             {
-                    "pagePath": "pages/show/show",
+                    "pagePath": "pages/trip/trip",
                     "text": "出行",
                     "iconPath": "img/car_white.png",
                     "selectedIconPath": "img/car_filled.png"

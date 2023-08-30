@@ -1,4 +1,3 @@
-/* pages/show-map/show-map.wxss */
 .show-map-container {
   display: flex;
   flex-direction: column;

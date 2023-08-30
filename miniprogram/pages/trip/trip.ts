@@ -1,4 +1,3 @@
-// pages/show-map/show-map.js
 Page({
 	data: {
     numberValue: 1,
