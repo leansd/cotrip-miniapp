@@ -3,5 +3,6 @@
   <view class="panel-frame">
     <plan class="panel" wx:if="{{status==='plan'}}"></plan>
     <waitting class="panel" wx:if="{{status==='waitting'}}"></waitting>
+    <to-meet class="panel" wx:if="{{status==='to-meet'}}"></to-meet>
   </view>
 </view>

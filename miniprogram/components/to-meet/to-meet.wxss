@@ -1,0 +1,52 @@
+.to-meet{
+  display: flex;
+  flex-direction: column;
+}
+.prompt{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  margin-right: 24px;
+}
+
+
+.prompt-title{
+  font-size: 24px;
+  padding-bottom: 10px;
+  border-bottom: solid 2px lightgray;
+}
+
+.meet-address{
+  color: #8f8f8f;
+  padding-left:2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 18px;
+  margin: 10px;
+
+}
+
+.address-label{
+  color: #3f3f3f;
+}
+
+.cotrip-partener{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  font-size: 18px;
+  justify-content: space-between;
+}
+
+.phone, .seats{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

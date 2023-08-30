@@ -1,0 +1,20 @@
+<view class="to-meet">
+  <view class="prompt">
+    <view class="prompt-title">{{'请于'+meetTime+'前抵达会合点'}}</view>
+    <view class="meet-address">
+      <image class="icon" src="../../img/address.png"></image>
+      <view class="address-label">{{meetAddress}}</view>
+    </view>
+    <view class="cotrip-partener">
+     <view class="phone">
+      <image class="icon" src="../../img/phone-fill.png"></image>
+      <view>{{phoneNumber}}</view>
+    </view>
+    <view class="seats">
+      <image class="icon" src="../../img/people.png"></image>
+      <view class="partener-seat-count">{{cotripSeats+'人'}}</view>
+    </view>
+    </view>
+  </view>
+  <button class="cancel-button">取消</button>
+</view>
