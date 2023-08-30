@@ -1,9 +1,11 @@
 <view class="show-map-container">
-  <map class="map" latitude="40.040415"  longitude="116.273511"  enable-poi enable-rotate></map>
+  <map class="map" latitude="{{currentTripPlan.planSpecification.departureLocation.latitude}}" longitude="{{currentTripPlan.planSpecification.departureLocation.longitude}}"  
+    enable-poi enable-rotate></map>
+
   <view class="panel-frame">
-    <plan class="panel" wx:if="{{status==='plan'}}"/>
-    <waitting class="panel" wx:if="{{status==='waitting'}}"/>
-    <to-meet class="panel" wx:if="{{status==='to-meet'}}"/>
-    <cancel-notice class="panel" wx:if="{{status==='cancelled'}}"/>
+    <plan class="panel" bind:tripPlanCreated="handleTripPlanCreated" wx:if="{{currentTripPlan.status==='plan'}}"/>
+    <waitting class="panel" wx:if="{{currentTripPlan.status==='WAITING_MATCH'}}"/>
+    <to-meet class="panel" wx:if="{{currentTripPlan.status==='to-meet'}}"/>
+    <cancel-notice class="panel" wx:if="{{currentTripPlan.status==='cancelled'}}"/>
   </view>
 </view>

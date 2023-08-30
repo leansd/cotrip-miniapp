@@ -1,7 +1,6 @@
 import {createTripPlanUrl} from '../../api/trip'
 import {generateTimeSlots, formatTimeWithToday} from '../../utils/timeRange'
-import {interceptor} from '../../modules/auth'
-
+import {TripPlan} from '../../types/trip'
 Component({
   /**
    * 组件的属性列表
@@ -19,10 +18,10 @@ Component({
     numberSeats: 1,
     departure:{"name": "虹桥火车站南出站",
     "latitude":31.19346,
-    "longtitude": 121.32074},
+    "longitude": 121.32074},
     arrival:{"name": "东方明珠",
     "latitude":31.23958,
-    "longtitude": 121.499763},
+    "longitude": 121.499763},
     timeRanges: generateTimeSlots(),
     selectedTimeRange: generateTimeSlots()[0]
   },
@@ -31,29 +30,28 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    onLoad() {
+      // 在 onLoad 中保存组件实例
+      this.componentInstance = this;
+    },
     handleNumberChange(event: any) {
-      this.setData({ numberValue: event.detail.value })
+      this.setData({ numberSeats: event.detail.value })
     },
     handleTimeChange(event:any){
-      console.log(event)
       this.setData({
         selectedTimeRange: this.data.timeRanges[event.detail.value]
       })
+    },
+    notifyTripPlanCreationSuccess(data:TripPlan){
+      console.log('trip plan created', data)
+      this.triggerEvent('tripPlanCreated',data)
     },
     showAddress(index:number){
       this.data.currentAddress=index;
       this.data.showAddressSelector=true;
     },
     createTripPlan(){
-      console.log({
-        planSpecification: {
-          departureLocation: this.data.departure,
-          arrivalLocation:this.data.arrival,
-          plannedDepartureTime: this.data.selectedTimeRange,
-          requiredSeats: this.data.numberSeats
-        }
-      });
-      console.log(interceptor)
+      const componentInstance = this;
       wx.request({
         url: createTripPlanUrl,
         method: 'POST',
@@ -72,7 +70,7 @@ Component({
           }
         },
         success(response){
-            //
+          componentInstance.notifyTripPlanCreationSuccess(response.data as TripPlan);
         },
         fail(err){
           console.error('创建出行计划失败',err)
