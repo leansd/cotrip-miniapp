@@ -12,6 +12,14 @@ const userLogin = ()=>{
   });
 }  
 
+export const interceptor = {
+  config: {
+    header: {
+      'user-id': '<user-id>'
+    }
+  }
+}
+
 const getToken = ():string|undefined=>{
   return wx.getStorageSync('userToken')
 }

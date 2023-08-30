@@ -4,7 +4,7 @@
     <picker class="time-picker" mode="selector" range="{{timeRanges}}" range-key="display" bindchange="handleTimeChange">
       <view>{{selectedTimeRange.display}}</view>
     </picker>
-    <number-selector value="{{numberValue}}" max="3" min="1" bind:change="handleNumberChange"></number-selector>
+    <number-selector value="{{numberSeats}}" max="3" min="1" bind:change="handleNumberChange"></number-selector>
   </view>
   <view class="info-row">
       <view class="dotview"><view class="green-dot"/></view>
@@ -15,7 +15,7 @@
       <view class="address-display" bind:tap="showAddress(1)">{{arrival.name}}</view>
   </view> 
   <view class="button-row">
-    <button class="ok-button">确定</button>
+    <button class="ok-button" bind:tap="createTripPlan">确定</button>
   </view>
   <address-selector wx:if="{{showAddressSelector}}"/>
 </view>

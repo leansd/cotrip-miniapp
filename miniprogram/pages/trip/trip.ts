@@ -1,6 +1,6 @@
 Page({
 	data: {
-    status: 'cancelled',
+    status: 'plan',
     numberValue: 1,
     timeRanges: [
       { value: "09:00-10:00", display: "上午 09:00 - 10:00" },
