@@ -8,14 +8,14 @@
   </view>
   <view class="info-row">
       <view class="dotview"><view class="green-dot"/></view>
-      <view class="address-display">{{departure.name}}</view>
+      <view id="departure" class="address-display" bind:tap="showAddress">{{departure.name}}</view>
   </view>
   <view class="info-row">
       <view class="dotview"><view class="red-dot"/></view>
-      <view class="address-display" bind:tap="showAddress(1)">{{arrival.name}}</view>
+      <view id="arrival"  class="address-display" bind:tap="showAddress">{{arrival.name}}</view>
   </view> 
   <view class="button-row">
     <button class="ok-button" bind:tap="createTripPlan">确定</button>
   </view>
-  <address-selector wx:if="{{showAddressSelector}}"/>
+  <address-selector bind:addressSelected="handleAddressSelected" bind:cancel="handleAddressSelectionCancel" wx:if="{{showAddressSelector}}"/>
 </view>

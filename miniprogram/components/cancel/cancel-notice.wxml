@@ -10,7 +10,7 @@
   </view>
   <view class="info-row">
       <view class="dotview"><view class="red-dot"/></view>
-      <view class="address-display" bind:tap="showAddress(1)">{{arrival.name}}</view>
+      <view class="address-display">{{arrival.name}}</view>
   </view> 
   <view class="button-row">
     <button class="ok-button">重新下单</button>

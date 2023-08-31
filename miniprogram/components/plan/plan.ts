@@ -14,7 +14,7 @@ Component({
    */
   data: {
     showAddressSelector: false,
-    currentAddress: 0, //0 - departure 1 - arrival
+    currentAddress: 'departure',
     numberSeats: 1,
     departure:{"name": "虹桥火车站南出站",
     "latitude":31.19346,
@@ -44,9 +44,18 @@ Component({
       console.log('trip plan created', data)
       this.triggerEvent('tripPlanCreated',data)
     },
-    showAddress(index:number){
-      this.data.currentAddress=index;
-      this.data.showAddressSelector=true;
+    showAddress(event:WechatMiniprogram.BaseEvent){
+      this.setData({showAddressSelector:true, currentAddress: event.target.id});
+    },
+    handleAddressSelected(data:any){
+      if (this.data.currentAddress==='departure'){
+          this.setData({departure: data.detail, showAddressSelector: false})
+      }else{
+          this.setData({arrival: data.detail, showAddressSelector: false})
+      }
+    },
+    handleAddressSelectionCancel(){
+      this.setData({showAddressSelector: false})
     },
     createTripPlan(){
       const componentInstance = this;

@@ -12,7 +12,7 @@
     <block wx:for="{{addressList}}" wx:key="index">
       <view class="address-item">
         <image class="icon" src="../../img/address.png"></image>
-        <view class="address-details">
+        <view class="address-details" bind:tap="handleAddressSelected" data-item="{{item}}">
           <view class="poi-name">{{item.name}}</view>
           <view class="poi-address">{{item.address}}</view>
         </view>

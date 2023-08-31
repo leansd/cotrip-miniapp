@@ -2,18 +2,23 @@ Component({
   properties: {
   },
 
+
   data: {
     cityList: [{"name": '上海'}], // 城市列表
     addressList: [{"name": "上海虹桥客运西站",
                     "address":"上海市闵行区申虹路298号",
-                    "latitude":34,
-                    "longtitude": 120},
-                    {"name": "上海虹桥站",
+                    "latitude":31.194301,
+                    "longitude":121.317611},
+                    {"name": "虹桥火车站南出站",
                     "address":"上海市闵行区申贵路1500号",
-                    "latitude":34,
-                    "longtitude": 120}], // 地址条目列表
-    selectedCity: {"name": '上海'}, // 选中的城市
-    addressInput: "上海虹桥" // 地址输入框内容
+                    "latitude":31.19346,
+                    "longitude": 121.32074},
+                    {"name": "东方明珠",
+                    "latitude":31.23958,
+                    "longitude": 121.499763,
+                    "address":"上海市浦东新区世纪大道1号"}],
+    selectedCity: {"name": '上海'}, 
+    addressInput: "上海虹桥" 
   },
 
   methods: {
@@ -33,8 +38,11 @@ Component({
       this.triggerEvent('addresschange', { address: addressInput });
     },
 
+    handleAddressSelected(event: WechatMiniprogram.BaseEvent){
+      this.triggerEvent('addressSelected',event.currentTarget.dataset.item);
+    },
     handleCancel() {
-      // 处理取消按钮点击事件
+      this.triggerEvent('cancel');
     }
   }
 });
