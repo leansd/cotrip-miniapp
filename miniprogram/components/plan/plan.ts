@@ -41,7 +41,6 @@ Component({
       })
     },
     notifyTripPlanCreationSuccess(data:TripPlan){
-      console.log('trip plan created', data)
       this.triggerEvent('tripPlanCreated',data)
     },
     showAddress(event:WechatMiniprogram.BaseEvent){

@@ -8,7 +8,7 @@ export const createTripPlanUrl = urlRoot()+'trip-plan';
 
 export function tripRequest(options:any) {
   const authHeader = {
-      'user-id': auth.getToken(),
+      'user-id': auth.getToken()?.slice(0,6),
       'Authorization': 'Bearer ' + auth.getToken()
   };
 

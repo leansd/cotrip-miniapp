@@ -4,3 +4,4 @@ function urlRoot(){
 }
 
 export const loginUrl = urlRoot()+'login';
+export const refreshUrl = urlRoot()+'refresh-token';
