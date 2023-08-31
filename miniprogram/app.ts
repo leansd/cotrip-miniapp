@@ -1,6 +1,6 @@
-import Auth from './modules/auth'
+import Auth from './auth/auth'
 
-import {interceptor} from './modules/auth'
+import {interceptor} from './auth/auth'
 App({
   globalData: {},
   interceptor: interceptor,

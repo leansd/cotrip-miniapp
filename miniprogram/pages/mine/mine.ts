@@ -1,4 +1,4 @@
-import auth from '../../modules/auth';
+import auth from '../../auth/auth';
 Page({
   data: {
     motto: 'Hello World',

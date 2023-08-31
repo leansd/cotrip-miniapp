@@ -1,4 +1,4 @@
-import {loginUrl} from '../api/auth'
+import {loginUrl} from './api'
 
 const userLogin = ()=>{
   wx.login({
@@ -11,15 +11,6 @@ const userLogin = ()=>{
     }
   });
 }  
-
-export const interceptor = {
-  config: {
-    header: {
-      'user-id': '<user-id>'
-    }
-  }
-}
-
 const getToken = ():string|undefined=>{
   return wx.getStorageSync('userToken')
 }

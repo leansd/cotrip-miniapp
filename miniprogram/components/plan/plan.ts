@@ -1,4 +1,4 @@
-import {createTripPlanUrl} from '../../api/trip'
+import {createTripPlanUrl, tripRequest} from '../../api/trip'
 import {generateTimeSlots, formatTimeWithToday} from '../../utils/timeRange'
 import {TripPlan} from '../../types/trip'
 Component({
@@ -50,12 +50,9 @@ Component({
     },
     createTripPlan(){
       const componentInstance = this;
-      wx.request({
+      tripRequest({
         url: createTripPlanUrl,
         method: 'POST',
-        header: {
-          'user-id':'user-1'
-        },
         data: {
           planSpecification: {
             departureLocation: this.data.departure,
