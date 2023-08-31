@@ -31,20 +31,3 @@
   border-radius: 4px;
   background-color: white;
 }
-.map-content {
-  background: #FFF;
-  z-index: 1;
-  width: 100%;
-  opacity: 0;
-}
-
-.map-content-show {
-  height: auto;
-  z-index: 2;
-  opacity: 1;
-  transition: 0.3s;
-}
-
-.map-padding {
-  padding-bottom: 20px;
-}

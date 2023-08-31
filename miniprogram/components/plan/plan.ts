@@ -31,8 +31,6 @@ Component({
    */
   methods: {
     onLoad() {
-      // 在 onLoad 中保存组件实例
-      this.componentInstance = this;
     },
     handleNumberChange(event: any) {
       this.setData({ numberSeats: event.detail.value })
@@ -77,6 +75,5 @@ Component({
         }
       });
     }
-
   }
 })

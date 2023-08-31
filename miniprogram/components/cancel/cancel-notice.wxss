@@ -75,17 +75,3 @@
 
 
 
-.clock {
-  height: 28px;
-  width: 28px;
-  margin-left: 8px;
-}
-
-.time-picker {
-  display: flex;
-  align-items: flex-start;
-  padding-left: 25px;
-  flex-grow: 1;
-  color: #3a3a3a;
-}
-

@@ -1,2 +1,5 @@
 resources/**
+node_modules/**
+tools/dist
+tools/node_modules/**
 
