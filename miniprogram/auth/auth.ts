@@ -40,7 +40,8 @@ const refreshToken = () => {
   if (!tokens) {
     return;
   }
-  const REFRESH_INTERVAL = tokens.expires_in * 30;
+  let REFRESH_INTERVAL = tokens.expires_in * 900;
+  if (REFRESH_INTERVAL<4*60*1000) REFRESH_INTERVAL = 4*60*1000;
   setInterval(() => {
     console.log('start refresh token')
     wx.request({
