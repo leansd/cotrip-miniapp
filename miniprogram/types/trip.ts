@@ -2,6 +2,7 @@ export type TripPlan={
   id: string;
   planSpecification: PlanSpecification;
   status: string;
+  userId: string;
 }
 
 export type PlanSpecification={
@@ -18,6 +19,13 @@ export type Location ={
 }
 
 export type TimeRange={
-  start: string;
-  end: string;
+  start: Date;
+  end: Date;
 }
+
+export type TripPlanEvent = {
+  id: string
+  data: TripPlan
+}
+
+

@@ -13,9 +13,9 @@ class StompClient {
       this.client = Stomp.over(this.wsAdapter);
   }
 
-  open(login: string, pass: string): Promise<void> {
+  open(): Promise<void> {
       return new Promise((resolve, reject) => {
-          this.client.connect(login, pass, resolve, reject);
+          this.client.connect({}, resolve, reject);
       });
   }
 

@@ -19,6 +19,10 @@ Page({
     this.setData({currentTripPlan: event.detail});
   },
 
+  handleTripPlanJoined(event:any){
+    this.setData({currentTripPlan: event.detail})
+  },
+
 	onLoad: function () {
   
   },

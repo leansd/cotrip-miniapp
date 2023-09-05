@@ -4,8 +4,8 @@
 
   <view class="panel-frame">
     <plan class="panel" bind:tripPlanCreated="handleTripPlanCreated" wx:if="{{currentTripPlan.status==='plan'}}"/>
-    <waitting class="panel" wx:if="{{currentTripPlan.status==='WAITING_MATCH'}}"/>
-    <to-meet class="panel" wx:if="{{currentTripPlan.status==='to-meet'}}"/>
+    <waitting class="panel" bind:tripPlanJoined="handleTripPlanJoined" wx:if="{{currentTripPlan.status==='WAITING_MATCH'}}"/>
+    <to-meet class="panel" wx:if="{{currentTripPlan.status==='JOINED'}}"/>
     <cancel-notice class="panel" wx:if="{{currentTripPlan.status==='cancelled'}}"/>
   </view>
 </view>
