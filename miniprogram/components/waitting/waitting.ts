@@ -1,9 +1,8 @@
-import WebSocketAdapter from  '../../utils/ws_adapter';
-var Stomp = require('../../utils/lib/stomp.orig');
+import StompClient from  '../../utils/stomp_client';
 
-Stomp.setInterval = function () { }
-Stomp.clearInterval = function () { }
-
+interface WaittingData{
+  stompClient: StompClient|null;
+}
 Component({
   /**
    * 组件的属性列表
@@ -15,42 +14,34 @@ Component({
   /**
    * 组件的初始数据
    */
-  data: {
-
+  data: <WaittingData>{
+    stompClient: null
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    initStomp() {
-      const wsAdapter = new WebSocketAdapter('ws://localhost:8081/notification', { 'user-id': 'user-id-1' });
-      const client = Stomp.over(wsAdapter);
-
-      client.connect('user', 'pass', (sessionId) => {
-        console.log('sessionId', sessionId);
-
-        client.subscribe('/user/queue/status', (message) => {
+    async initStomp() {
+      try {
+        this.data.stompClient = new StompClient();
+        await this.data.stompClient.open('user', 'pass');
+        
+        this.data.stompClient.subscribe('/user/queue/status', (message) => {
           console.log('Received message from /user/queue/status:', message.body);
         });
 
-        // Subscribe to /topic/greetings
-        client.subscribe('/topic/greetings', (message) => {
+        this.data.stompClient.subscribe('/topic/greetings', (message) => {
           console.log('Received message from /topic/greetings:', message.body);
         });
 
-        // Send a message to /app/hello
-        client.send("/app/hello", {}, JSON.stringify({ 'name': 'AAA' }));
-      });
-
-      // Store the client in the component's data for later use in the detached lifecycle
-      this.setData({ stompClient: client });
+        this.data.stompClient.send("/app/hello", {}, JSON.stringify({ 'name': 'AAA' }));
+      } catch (error) {
+        console.error("Error connecting to Stomp:", error);
+      }
     },
     closeStomp() {
-      const client = this.data.stompClient;
-      if (client && client.connected) {
-        client.disconnect();
-      }
+      this.data.stompClient.close();
     }
   },
   lifetimes: {
