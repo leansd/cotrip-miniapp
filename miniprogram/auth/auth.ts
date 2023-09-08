@@ -24,7 +24,7 @@ const requestToken = (code: string) => {
       code: code
     },
     success(response) {
-      if (response.data) {
+      if (response.statusCode===200 && response.data) {
         wx.setStorageSync('userToken', response.data);
         refreshToken();
       }

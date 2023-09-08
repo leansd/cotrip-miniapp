@@ -1,10 +1,10 @@
 import auth from '../auth/auth'
 
 function urlRoot(){
-  return 'http://localhost:8081/';
+  return 'http://localhost/cotrip/plan/v1/';
 }
 
-export const createTripPlanUrl = urlRoot()+'trip-plan';
+export const createTripPlanUrl = urlRoot()+'trip-plans/';
 
 export function tripRequest(options:any) {
   const authHeader = {
