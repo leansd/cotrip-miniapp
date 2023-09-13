@@ -1,6 +1,6 @@
 
 function urlRoot(){
-  return 'http://localhost/auth/v1/';
+  return 'https://api.leansd.cn/auth/v1/';
 }
  
 export const loginUrl = urlRoot()+'login';

@@ -1,7 +1,7 @@
 import auth from '../auth/auth'
 
 function urlRoot(){
-  return 'http://localhost/cotrip/plan/v1/';
+  return 'https://api.leansd.cn/cotrip/plan/v1/';
 }
 
 export const createTripPlanUrl = urlRoot()+'trip-plans/';
