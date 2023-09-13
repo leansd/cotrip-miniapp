@@ -10,7 +10,7 @@
     "experimentalDecorators": true,
     "noImplicitThis": true,
     "noImplicitReturns": true,
-    "alwaysStrict": true,
+    "alwaysStrict": false,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

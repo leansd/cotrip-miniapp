@@ -8,8 +8,8 @@ class StompClient {
   private client: any;
   private wsAdapter: any;
 
-  constructor() {
-      this.wsAdapter = new WebSocketAdapter('ws://localhost:8081/notification', { 'user-id': 'user-id-1' });
+  constructor(url:string) {
+      this.wsAdapter = new WebSocketAdapter(url, { 'user-id': 'user-id-1' });
       this.client = Stomp.over(this.wsAdapter);
   }
 

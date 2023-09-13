@@ -6,6 +6,7 @@ function urlRoot(){
 
 export const createTripPlanUrl = urlRoot()+'trip-plans/';
 
+export const tripPlanNotificationUrl = "wss://" + "api.leansd.cn/notification"
 export function tripRequest(options:any) {
   const authHeader = {
       'user-id': 'user-id-1',

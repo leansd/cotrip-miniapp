@@ -1,11 +1,16 @@
 export default class WebSocketAdapter {
-  private socketOpen: boolean = false;
-  private socketMsgQueue: string[] = [];
+  private socketOpen: boolean;
+  private socketMsgQueue: string[];
   
-  public onopen: () => void = null;
-  public onmessage: (event: any) => void = null;
+  public onopen: (() => void)|null;
+  public onmessage: ((event: any) => void)|null;
 
   constructor(url: string, headers: any) {
+    this.socketOpen = false;
+    this.socketMsgQueue = [];
+    this.onopen = null;
+    this.onmessage = null;
+    
     wx.connectSocket({
       url: url,
       header: headers

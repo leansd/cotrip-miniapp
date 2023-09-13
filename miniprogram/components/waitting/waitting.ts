@@ -1,7 +1,7 @@
 import StompClient from  '../../utils/stomp_client';
 import { WebSocketMessage } from '../../types/ws'
 import { TripPlanEvent } from '../../types/trip';
-
+import {tripPlanNotificationUrl} from '../../api/trip';
 interface WaittingData{
   stompClient: StompClient|null;
 }
@@ -17,7 +17,7 @@ Component({
   methods: {
     async initStomp() {
       try {
-        this.data.stompClient = new StompClient();
+        this.data.stompClient = new StompClient(tripPlanNotificationUrl);
         await this.data.stompClient.open();
         this.data.stompClient.subscribe('/user/queue/status', (message: WebSocketMessage) => {
           let event:TripPlanEvent = JSON.parse(message.body);
