@@ -1,7 +1,7 @@
 import StompClient from  '../../utils/stomp_client';
 import { WebSocketMessage } from '../../types/ws'
 import { TripPlanEvent } from '../../types/trip';
-import {tripPlanNotificationUrl} from '../../api/trip';
+import {tripPlanNotificationUrl} from '../../api/trip/trip';
 interface WaittingData{
   stompClient: StompClient|null;
 }

@@ -1,6 +1,6 @@
-import Auth from './auth/auth'
+import Auth from './api/auth/auth'
 
-import {interceptor} from './auth/auth'
+import {interceptor} from './api/auth/auth'
 App({
   globalData: {},
   interceptor: interceptor,

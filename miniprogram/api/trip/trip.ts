@@ -1,12 +1,13 @@
-import auth from '../auth/auth'
+import auth from '../auth/auth';
+import {baseURL, webSocketURL} from '../urlRoot';
 
 function urlRoot(){
-  return 'https://api.leansd.cn/cotrip/plan/v1/';
+  return baseURL + '/cotrip/plan/v1/';
 }
 
 export const createTripPlanUrl = urlRoot()+'trip-plans/';
 
-export const tripPlanNotificationUrl = "wss://" + "api.leansd.cn/notification"
+export const tripPlanNotificationUrl = webSocketURL + '/notification';
 export function tripRequest(options:any) {
   const authHeader = {
       'user-id': 'user-id-1',

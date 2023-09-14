@@ -1,4 +1,4 @@
-import {createTripPlanUrl, tripRequest} from '../../api/trip'
+import {createTripPlanUrl, tripRequest} from '../../api/trip/trip'
 import {generateTimeSlots, formatTimeWithToday} from '../../utils/timeRange'
 import {TripPlan} from '../../types/trip'
 Component({
