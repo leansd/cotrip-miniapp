@@ -1,0 +1,18 @@
+
+var formatDate = function(isoStr) {
+  var parts = isoStr.split('T');
+  var dates = parts[0].split('-');
+  var times = parts[1].split(':');
+
+  var year = dates[0];
+  var month = dates[1];
+  var day = dates[2];
+  var hour = times[0];
+  var minute = times[1];
+
+  return year + '-' + month + '-' + day + ' ' + hour + ':' + minute;
+}
+
+module.exports = {
+  formatDate: formatDate
+}

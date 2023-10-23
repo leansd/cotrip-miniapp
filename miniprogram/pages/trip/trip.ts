@@ -1,7 +1,7 @@
 Page({
 	data: {
     currentTripPlan: {
-      status: 'plan',
+      status: 'new',
       planSpecification: {
         departureLocation: {
           latitude: 40.040415,
@@ -23,7 +23,12 @@ Page({
     this.setData({currentTripPlan: event.detail})
   },
 
-	onLoad: function () {
+  handleTripPlanCanceled(event:any){
+    console.log(event.detail)
+    this.setData({currentTripPlan: event.detail})
+  },
+
+  onLoad: function () {
   
   },
 });

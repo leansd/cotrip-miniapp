@@ -3,9 +3,15 @@
     enable-poi enable-rotate></map>
 
   <view class="panel-frame">
-    <plan class="panel" bind:tripPlanCreated="handleTripPlanCreated" wx:if="{{currentTripPlan.status==='plan'}}"/>
-    <waitting class="panel" bind:tripPlanJoined="handleTripPlanJoined" wx:if="{{currentTripPlan.status==='WAITING_MATCH'}}"/>
+    <plan class="panel" bind:tripPlanCreated="handleTripPlanCreated" wx:if="{{currentTripPlan.status==='new'}}"/>
+    <waitting class="panel" 
+    tripPlan="{{currentTripPlan}}"
+    bind:tripPlanJoined="handleTripPlanJoined"
+    bind:tripPlanCanceled="handleTripPlanCanceled" wx:if="{{currentTripPlan.status==='WAITING_MATCH'}}"/>
     <to-meet class="panel" wx:if="{{currentTripPlan.status==='JOINED'}}"/>
-    <cancel-notice class="panel" wx:if="{{currentTripPlan.status==='cancelled'}}"/>
+    <cancel-notice 
+    tripPlan="{{currentTripPlan}}"
+    bind:createNewPlan="handleCreateNewPlan"
+    class="panel" wx:if="{{currentTripPlan.status==='CANCELED'}}"/>
   </view>
 </view>

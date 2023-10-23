@@ -1,4 +1,4 @@
-import {createTripPlanUrl, tripRequest} from '../../api/trip/trip'
+import {tripPlanUrl, tripRequest} from '../../api/trip/trip'
 import {generateTimeSlots, formatTimeWithToday} from '../../utils/timeRange'
 import {TripPlan} from '../../types/trip'
 Component({
@@ -59,7 +59,7 @@ Component({
     createTripPlan(){
       const componentInstance = this;
       tripRequest({
-        url: createTripPlanUrl,
+        url: tripPlanUrl,
         method: 'POST',
         data: {
           planSpecification: {

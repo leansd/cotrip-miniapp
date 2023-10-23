@@ -1,5 +1,6 @@
 const accountInfo = wx.getAccountInfoSync();
 export var env = accountInfo.miniProgram.envVersion;
+env = 'release';
 if(!env){
   console.error("获取运行环境失败!");
   env = "develop";

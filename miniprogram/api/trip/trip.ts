@@ -5,7 +5,7 @@ function urlRoot(){
   return baseURL + '/cotrip/plan/v1/';
 }
 
-export const createTripPlanUrl = urlRoot()+'trip-plans/';
+export const tripPlanUrl = urlRoot()+'trip-plans/';
 
 export const tripPlanNotificationUrl = webSocketURL + '/notification';
 export function tripRequest(options:any) {

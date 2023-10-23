@@ -1,16 +1,18 @@
+<wxs module="dateutils"  src="../dateutils.wxs" />
+
 <view class="cancelled">
   <view class="prompt-title">订单取消成功</view>
   <view class="time-row">
     <image class="icon" src="../../img/clock.png"></image>
-    <view class="time-info">{{departureTime}}</view>
+    <view class="time-info">{{dateutils.formatDate(tripPlan.planSpecification.plannedDepartureTime.start)}}</view>
   </view>
   <view class="info-row">
       <view class="dotview"><view class="green-dot"/></view>
-      <view class="address-display">{{departure.name}}</view>
+      <view class="address-display">{{tripPlan.departure.name}}</view>
   </view>
   <view class="info-row">
       <view class="dotview"><view class="red-dot"/></view>
-      <view class="address-display">{{arrival.name}}</view>
+      <view class="address-display"></view>
   </view> 
   <view class="button-row">
     <button class="ok-button">重新下单</button>
