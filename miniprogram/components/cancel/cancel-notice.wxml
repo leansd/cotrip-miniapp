@@ -1,5 +1,4 @@
 <wxs module="dateutils"  src="../dateutils.wxs" />
-
 <view class="cancelled">
   <view class="prompt-title">订单取消成功</view>
   <view class="time-row">
@@ -15,7 +14,7 @@
       <view class="address-display"></view>
   </view> 
   <view class="button-row">
-    <button class="ok-button">重新下单</button>
+    <button class="ok-button" bind:tap="newTripPlan">重新下单</button>
   </view>
   <address-selector wx:if="{{showAddressSelector}}"/>
 </view>

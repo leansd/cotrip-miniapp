@@ -27,7 +27,9 @@ Page({
     console.log(event.detail)
     this.setData({currentTripPlan: event.detail})
   },
-
+  handleCreateNewPlan(event:any){
+    this.setData({currentTripPlan: event.detail});
+  },
   onLoad: function () {
   
   },
