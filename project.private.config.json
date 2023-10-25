@@ -3,7 +3,7 @@
   "projectname": "cotrip-miniapp",
   "setting": {
     "compileHotReLoad": true,
-    "skylineRenderEnable": false,
+    "skylineRenderEnable": true,
     "urlCheck": false
   },
   "libVersion": "3.0.1"

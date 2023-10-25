@@ -11,6 +11,10 @@
   font-size: 20px;
 }
 
+.upper-container-reserved{
+  height: 80px;
+}
+
 .upper-container, .lower-container {
   background-color: white;
   border-radius: 10px;
@@ -54,6 +58,9 @@
 }
 
 .cancel-button {
+  width: 100%;
+  height: 30px;
+  margin-top: 15px;
   align-self: center;
   background-color: #f0f0f0;
   border: none;

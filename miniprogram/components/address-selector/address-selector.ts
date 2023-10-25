@@ -5,15 +5,18 @@ Component({
 
   data: {
     cityList: [{"name": '上海'}], // 城市列表
-    addressList: [{"name": "上海虹桥客运西站",
+    addressList: [{"index": 0,
+                    "name": "上海虹桥客运西站",
                     "address":"上海市闵行区申虹路298号",
                     "latitude":31.194301,
                     "longitude":121.317611},
-                    {"name": "虹桥火车站南出站",
+                    {"index": 1,
+                    "name": "虹桥火车站南出站",
                     "address":"上海市闵行区申贵路1500号",
                     "latitude":31.19346,
                     "longitude": 121.32074},
-                    {"name": "东方明珠",
+                    {"index": 2,
+                    "name": "东方明珠",
                     "latitude":31.23958,
                     "longitude": 121.499763,
                     "address":"上海市浦东新区世纪大道1号"}],
@@ -39,9 +42,11 @@ Component({
     },
 
     handleAddressSelected(event: WechatMiniprogram.BaseEvent){
+      console.log('address selected')
       this.triggerEvent('addressSelected',event.currentTarget.dataset.item);
     },
     handleCancel() {
+      console.log('canceled selection')
       this.triggerEvent('cancel');
     }
   }

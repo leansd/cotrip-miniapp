@@ -8,7 +8,7 @@
   </view>
 
   <view class="tab-content" wx:if="{{currentTab === 'trips'}}">
-    <scroll-view class="trips">
+    <scroll-view type="list" class="trips">
         <block wx:for="{{tripPlans}}" wx:key="uniqueKey">
             <view class="trip-card">
                 <view class="date-status">

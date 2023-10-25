@@ -29,8 +29,8 @@
 
 .trips {
   width: 100%;
-  height: 80vh; /* 这是一个示例高度，可以根据实际情况进行调整 */
-  overflow-y: scroll; /* 为了确保在某些情况下滚动条出现 */
+  height: 80vh;
+  overflow-y: scroll;
 }
 
 .trip-card {

@@ -1,13 +1,14 @@
-<view class="address-modal">
-  <view class="upper-container">
+<view class="address-modal" bindtap="handleCancel">
+  <!-- <view class="upper-container">
     <view class="address-bar">
       <picker class="city-picker" mode="selector" range="{{cityList}}" range-key="name" bindchange="handleCityChange">
         <view>{{selectedCity.name}}</view>
       </picker>
       <input class="address-input" placeholder="请输入地址" value="{{addressInput}}" bindinput="handleAddressInput"></input>
     </view>
-    <button class="cancel-button" bindtap="handleCancel">取消</button>
-  </view>
+  </view> -->
+  <view class="upper-container-reserved">
+  </view >
   <view class="lower-container">
     <block wx:for="{{addressList}}" wx:key="index">
       <view class="address-item">
@@ -19,4 +20,5 @@
       </view>
     </block>
   </view>
+  <button class="cancel-button" bindtap="handleCancel">取消</button>
 </view>

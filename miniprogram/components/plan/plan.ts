@@ -47,6 +47,9 @@ Component({
       this.setData({showAddressSelector:true, currentAddress: event.target.id});
     },
     handleAddressSelected(data:any){
+      console.log('handle address selected')
+      console.log(data)
+
       if (this.data.currentAddress==='departure'){
           this.setData({departure: data.detail, showAddressSelector: false})
       }else{
