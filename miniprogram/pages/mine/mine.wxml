@@ -1,35 +1,35 @@
-<wxs module="dateutils"  src="../../utils/dateutils.wxs" />
-<wxs module="planStatus"  src="../../utils/planStatus.wxs" />
+<wxs module="dateutils" src="../../utils/dateutils.wxs" />
+<wxs module="planStatus" src="../../utils/planStatus.wxs" />
 
 <view class="container">
-  <view class="text-box">
-    <text>我的行程</text>
+  <view class="tabs"> 
+    <view class="tab-item" bindtap="switchTab" data-tab="trips">行程</view>
+    <view class="tab-item" bindtap="switchTab" data-tab="about">关于</view>
   </view>
-  <view class="table">
-    <view class="table-header">
-      <view class="table-cell">起始地</view>
-      <view class="table-cell">目的地</view>
-      <view class="table-cell">日期</view>
-      <view class="table-cell">状态</view>
+
+  <view class="tab-content" wx:if="{{currentTab === 'trips'}}">
+    <scroll-view class="trips">
+        <block wx:for="{{tripPlans}}" wx:key="uniqueKey">
+            <view class="trip-card">
+                <view class="date-status">
+                    <text class="trip-date">{{dateutils.formatDate(item.planSpecification.plannedDepartureTime.start)}}</text>
+                    <text class="trip-status">{{planStatus.translateStatus(item.status)}}</text>
+                </view>
+                <view class="trip-info">
+                    <text class="location">出发：{{item.planSpecification.departureLocation.name}}</text>
+                    <text class="location">目的：{{item.planSpecification.arrivalLocation.name}}</text>
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+  </view>
+  
+  <view class="tab-content" wx:if="{{currentTab === 'about'}}">
+    <view class="text-box">
+      <rich-text nodes="{{textDescription}}"></rich-text>
     </view>
-
-    <block wx:for="{{tripPlans}}" wx:key="uniqueKey">
-      <view class="table-row">
-        <view class="table-cell">{{item.planSpecification.departureLocation.name}}</view>
-        <view class="table-cell">{{item.planSpecification.arrivalLocation.name}}</view>
-        <view class="table-cell">{{dateutils.formatDate(item.planSpecification.plannedDepartureTime.start)}}</view>
-        <view class="table-cell">{{planStatus.translateStatus(item.status)}}</view>
-      </view>
-    </block>
+    <view class="image-box">
+        <image src="{{imageSrc}}" mode="aspectFit"></image>
+    </view>
   </view>
-
-  <view class="text-box">
-    <rich-text nodes="{{textDescription}}"></rich-text>
-    <!-- <textarea placeholder="共享出行演示程序说明" value="{{textDescription}}" disabled="true"></textarea> -->
-  </view>
-
-  <view class="image-box">
-    <image src="{{imageSrc}}" mode="aspectFit"></image>
-  </view>
-
 </view>

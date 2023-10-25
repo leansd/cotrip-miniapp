@@ -1,9 +1,11 @@
 
 var formatDate = function(isoStr) {
+  if (isoStr===undefined) return '';
   var parts = isoStr.split('T');
   var dates = parts[0].split('-');
   var times = parts[1].split(':');
-
+  console.log(parts)
+  
   var year = dates[0];
   var month = dates[1];
   var day = dates[2];
