@@ -1,4 +1,4 @@
-<wxs module="dateutils"  src="../dateutils.wxs" />
+<wxs module="dateutils"  src="../../utils/dateutils.wxs" />
 <view class="cancelled">
   <view class="prompt-title">订单取消成功</view>
   <view class="time-row">
@@ -7,11 +7,11 @@
   </view>
   <view class="info-row">
       <view class="dotview"><view class="green-dot"/></view>
-      <view class="address-display">{{tripPlan.departure.name}}</view>
+      <view class="address-display">{{tripPlan.planSpecification.departureLocation.name}}</view>
   </view>
   <view class="info-row">
       <view class="dotview"><view class="red-dot"/></view>
-      <view class="address-display"></view>
+      <view class="address-display">{{tripPlan.planSpecification.arrivalLocation.name}}</view>
   </view> 
   <view class="button-row">
     <button class="ok-button" bind:tap="newTripPlan">重新下单</button>

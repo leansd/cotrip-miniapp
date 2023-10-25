@@ -1,0 +1,14 @@
+var translateStatus = function (status) {
+  if (status === 'CANCELED') {
+    return '已取消';
+  } else if (status === 'WAITING_MATCH') {
+    return '等待拼友';
+  } else{
+    return status;
+  }
+  return status; // 如果没有匹配的翻译，则返回原始状态
+}
+
+module.exports = {
+  translateStatus: translateStatus
+}

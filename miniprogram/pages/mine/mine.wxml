@@ -1,3 +1,6 @@
+<wxs module="dateutils"  src="../../utils/dateutils.wxs" />
+<wxs module="planStatus"  src="../../utils/planStatus.wxs" />
+
 <view class="container">
   <view class="text-box">
     <text>我的行程</text>
@@ -12,16 +15,17 @@
 
     <block wx:for="{{tripPlans}}" wx:key="uniqueKey">
       <view class="table-row">
-        <view class="table-cell">{{item.departureLocation}}</view>
-        <view class="table-cell">{{item.arrivalLocation}}</view>
-        <view class="table-cell">{{item.date}}</view>
-        <view class="table-cell">{{item.status}}</view>
+        <view class="table-cell">{{item.planSpecification.departureLocation.name}}</view>
+        <view class="table-cell">{{item.planSpecification.arrivalLocation.name}}</view>
+        <view class="table-cell">{{dateutils.formatDate(item.planSpecification.plannedDepartureTime.start)}}</view>
+        <view class="table-cell">{{planStatus.translateStatus(item.status)}}</view>
       </view>
     </block>
   </view>
 
   <view class="text-box">
-    <textarea placeholder="共享出行演示程序说明" value="{{textDescription}}" disabled="true"></textarea>
+    <rich-text nodes="{{textDescription}}"></rich-text>
+    <!-- <textarea placeholder="共享出行演示程序说明" value="{{textDescription}}" disabled="true"></textarea> -->
   </view>
 
   <view class="image-box">
