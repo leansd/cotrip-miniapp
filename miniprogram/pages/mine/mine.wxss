@@ -22,7 +22,9 @@
 .tab-content {
   width: 100%;
   padding: 10px;
-  /* 如果需要，可以添加其他样式 */
+  align-items: flex-start;
+  flex-direction: column;
+  display: flex;
 }
 
 .trips {
@@ -72,4 +74,9 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.about {
+  width: 100%;
+  height:100vh;
 }

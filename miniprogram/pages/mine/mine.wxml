@@ -25,11 +25,13 @@
   </view>
   
   <view class="tab-content" wx:if="{{currentTab === 'about'}}">
+  <view class="about">
     <view class="text-box">
-      <rich-text nodes="{{textDescription}}"></rich-text>
+      <rich-text nodes="{{textDescription}}"></rich-text> 
     </view>
     <view class="image-box">
         <image src="{{imageSrc}}" mode="aspectFit"></image>
     </view>
+  </view>
   </view>
 </view>

@@ -5,7 +5,7 @@ Page({
     tripPlans: [
       
     ],
-    textDescription: '<b>说明：</b><br><br>本小程序是<b>精益软件设计</b>方法的演示程序，并非实际运行业务。<br>方法细节请参见《软件设计：从专业到卓越》', 
+    textDescription: '<b>说明：</b><br><br>本小程序是精益软件设计方法的演示程序，并非实际运行业务。<br>方法细节请参见《软件设计：从专业到卓越》', 
     imageSrc: '../../img/leanbook.png', 
     currentTab: 'trips'  // 默认选中
   },
