@@ -53,10 +53,27 @@ Component({
     notifyTripPlanCanceled(data:TripPlan){
       this.triggerEvent('tripPlanCanceled',data)
     },
+
+    refreshTripPlanStatus(){
+      const componentInstance = this;
+      tripRequest({
+        url: tripPlanUrl + this.data.tripPlan.id,
+        method: 'GET',
+        success(response){
+          const plan = response.data as TripPlan;
+          if (plan.status==='JOINED')
+            componentInstance.triggerEvent('tripPlanJoined',plan)
+        },
+        fail(err){
+          console.error('刷新出行计划状态',err)
+        }
+    });
+    },
   },
   lifetimes: {
     attached() {
       this.initStomp();
+      this.refreshTripPlanStatus();
     },
     detached() {
       this.closeStomp();
