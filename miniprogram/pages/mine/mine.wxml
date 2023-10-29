@@ -4,7 +4,7 @@
 <view class="container">
   <view class="tabs"> 
     <view class="tab-item" bindtap="switchTab" data-tab="trips">行程</view>
-    <view class="tab-item" bindtap="switchTab" data-tab="about">关于</view>
+    <view class="tab-item" bindtap="switchTab" data-tab="about">说明</view>
   </view>
 
   <view class="tab-content" wx:if="{{currentTab === 'trips'}}">
