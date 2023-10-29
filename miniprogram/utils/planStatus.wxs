@@ -3,6 +3,8 @@ var translateStatus = function (status) {
     return '已取消';
   } else if (status === 'WAITING_MATCH') {
     return '等待拼友';
+  } else if (status === 'JOINED') {
+    return '已拼成';
   } else{
     return status;
   }
