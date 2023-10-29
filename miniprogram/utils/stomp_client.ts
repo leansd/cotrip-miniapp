@@ -1,4 +1,5 @@
 import WebSocketAdapter from './ws_adapter'
+import auth from '../api/auth/auth'
 var Stomp = require('./lib/stomp.orig');
 
 Stomp.setInterval = function () { }
@@ -9,7 +10,11 @@ class StompClient {
   private wsAdapter: any;
 
   constructor(url:string) {
-      this.wsAdapter = new WebSocketAdapter(url, { 'user-id': 'user-id-1' });
+    const authHeader = {
+      'user-id': 'user-id-1',
+      'Authorization': 'Bearer ' + auth.getToken()
+    };
+    this.wsAdapter = new WebSocketAdapter(url, authHeader);
       this.client = Stomp.over(this.wsAdapter);
   }
 
