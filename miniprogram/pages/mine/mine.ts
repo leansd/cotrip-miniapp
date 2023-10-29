@@ -11,7 +11,7 @@ Page({
   },
 
   // 生命周期回调—监听页面加载
-  onLoad: function(options) {
+  onShow: function(options) {
     this.loadTripPlans()
   },
 
