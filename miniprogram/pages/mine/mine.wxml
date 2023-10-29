@@ -2,37 +2,36 @@
 <wxs module="planStatus" src="../../utils/planStatus.wxs" />
 
 <view class="container">
-  <view class="tabs"> 
+  <view class="tabs">
     <view class="tab-item" bindtap="switchTab" data-tab="trips">行程</view>
     <view class="tab-item" bindtap="switchTab" data-tab="about">说明</view>
   </view>
 
   <view class="tab-content" wx:if="{{currentTab === 'trips'}}">
-    <scroll-view   
-    scroll-y type="list" class="trips">
-        <block wx:for="{{tripPlans}}" wx:key="uniqueKey">
-            <view class="trip-card">
-                <view class="date-status">
-                    <text class="trip-date">{{dateutils.formatDate(item.planSpecification.plannedDepartureTime.start)}}</text>
-                    <text class="trip-status">{{planStatus.translateStatus(item.status)}}</text>
-                </view>
-                <view class="trip-info">
-                    <text class="location">出发：{{item.planSpecification.departureLocation.name}}</text>
-                    <text class="location">目的：{{item.planSpecification.arrivalLocation.name}}</text>
-                </view>
-            </view>
-        </block>
+    <scroll-view scroll-y type="list" class="trips">
+      <block wx:for="{{tripPlans}}" wx:key="uniqueKey">
+        <view class="trip-card">
+          <view class="date-status">
+            <text class="trip-date">{{dateutils.formatDate(item.planSpecification.plannedDepartureTime.start)}}</text>
+            <text class="trip-status">{{planStatus.translateStatus(item.status)}}</text>
+          </view>
+          <view class="trip-info">
+            <text class="location">出发：{{item.planSpecification.departureLocation.name}}</text>
+            <text class="location">目的：{{item.planSpecification.arrivalLocation.name}}</text>
+          </view>
+        </view>
+      </block>
     </scroll-view>
   </view>
-  
+
   <view class="tab-content" wx:if="{{currentTab === 'about'}}">
-  <view class="about">
-    <view class="text-box">
-      <rich-text nodes="{{textDescription}}"></rich-text> 
-    </view>
-    <view class="image-box">
-        <image src="{{imageSrc}}" mode="aspectFit"></image>
-    </view>
-  </view>
+    <scroll-view scroll-y type="list" class="about">
+      <view class="text-box">
+        <rich-text nodes="{{textDescription}}"></rich-text>
+        <view class="image-box">
+          <image src="{{imageSrc}}" mode="aspectFit"></image>
+        </view>
+      </view>
+    </scroll-view>
   </view>
 </view>
